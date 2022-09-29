@@ -1,0 +1,23 @@
+./bin/zookeeper-server-start.sh config/zookeeper.properties
+
+./bin/kafka-server-start.sh config/server.properties
+
+./bin/kafka-topics.sh --create --topic <topic name> --bootstrap-server localhost:9092
+
+./bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+./bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic <topic name>
+
+./bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic <topic name>
+
+./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic name>
+
+./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic name> --from-beginning
+
+cp config/server.properties config/server-1.properties
+
+nano config/server-1.properties
+
+./bin/kafka-server-start.sh config/server-1.properties
+
+./bin/kafka-topics.sh --create --topic <topic name> --bootstrap-server localhost:9092, localhost:9093, localhost: 9094 --replication-factor 3 --partitions 2

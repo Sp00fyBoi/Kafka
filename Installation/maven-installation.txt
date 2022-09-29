@@ -1,0 +1,30 @@
+Maven Installation
+--------------------
+Steps for Installation
+-------------------------
+
+Download Maven 3.8.6 from the link https://maven.apache.org/download.cgi
+
+Download apache-maven-3.8.6-bin.tar.gz
+
+Steps for Installation
+-------------------------
+]$ tar xfz apache-maven-3.8.6-bin.tar.gz
+]$ sudo mv apache-maven-3.8.6-bin /usr/local/maven
+
+]$ cd /usr/local/maven
+
+
+Setting the MAVEN_HOME Environment Variable in ~/.bashrc
+]$ sudo gedit ~/.bashrc
+
+Go to the end of the file and type the following enivronmental variables.
+
+# Maven Variables
+export M2_HOME=/usr/local/maven
+export PATH=$PATH:$M2_HOME/bin
+# End Maven Variables
+
+Save and close
+To make changes in bashrc permanent source bashrc
+]$ source ~/.bashrc
